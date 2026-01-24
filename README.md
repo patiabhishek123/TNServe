@@ -1,92 +1,52 @@
-# motia-yt
+# 🖼️ TNServe: YouTube Thumbnail Optimizer
 
-A Motia tutorial project in TypeScript.
+**TNServe** is an automated service designed for content creators and power users to bridge the gap between "standard" content and viral visuals. It fetches the latest thumbnails from your subscribed YouTube channels, analyzes them, and uses AI to suggest high-CTR (Click-Through Rate) alternatives.
 
-## What is Motia?
+---
 
-Motia is an open-source, unified backend framework that eliminates runtime fragmentation by bringing **APIs, background jobs, queueing, streaming, state, workflows, AI agents, observability, scaling, and deployment** into one unified system using a single core primitive, the **Step**.
+## 🚀 Overview
 
-## Quick Start
+The YouTube algorithm relies heavily on first impressions. **TNServe** helps you study what your favorite creators are doing and provides a "creative sandbox" to improve upon existing designs. By fetching live data via the YouTube Data API and processing it through AI, TNServe identifies weaknesses in composition, lighting, and text placement.
 
+### 🛠️ How it Works
+1.  **Fetch:** Connects to your YouTube account to pull thumbnails from recent uploads in your subscription feed.
+2.  **Analyze:** Evaluates the visual hierarchy, color contrast, and "Curiosity Gap" of the current thumbnail.
+3.  **Suggest:** Generates text-based design prompts or AI-rendered variations that follow modern viral trends (e.g., the "Three-Element Rule").
+
+---
+
+## ✨ Key Features
+
+* **Sub Feed Integration:** Automatically syncs with your YouTube subscriptions to keep your dashboard updated with the latest trends.
+* **Heatmap Analysis:** Visualizes where a viewer's eye is likely to land first on any given thumbnail.
+* **CTR Prediction:** Uses a trained model to estimate the effectiveness of a thumbnail compared to niche competitors.
+* **AI Suggestion Engine:** Powered by **Google Gemini**, providing actionable tips like *"Increase facial contrast"* or *"Reduce text to 3 bold words."*
+* **A/B Comparison:** View the original thumbnail side-by-side with the AI-suggested improvement.
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology |
+| :--- | :--- |
+| **Frontend** | React, Tailwind CSS, Lucide Icons |
+| **Backend**  | Node.js ,Express , TypeScript
+| **API Integration** | YouTube Data API v3 (OAuth 2.0) |
+| **AI Intelligence** | Google Gemini 1.5 Flash (Analysis & Suggestions) |
+| **Image Processing** | Sharp / Canvas (for basic edits & heatmaps) |
+| **Storage** | Supabase (for caching thumbnails and user preferences) |
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Prerequisites
+* Node.js 18+
+* Google Cloud Project (with **YouTube Data API v3** enabled)
+* Google AI Studio API Key (for **Gemini**)
+
+### 2. Clone and Install
 ```bash
-# Start the development server
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-This starts the Motia runtime and the **Workbench** - a powerful UI for developing and debugging your workflows. By default, it's available at [`http://localhost:3000`](http://localhost:3000).
-
-1. **Open the Workbench** in your browser at [`http://localhost:3000`](http://localhost:3000)
-2. **Click the `Tutorial`** button on the top right of the workbench
-3. **Complete the `Tutorial`** to get an understanding of the basics of Motia and using the Workbench
-
-## Step Types
-
-Every Step has a `type` that defines how it triggers:
-
-| Type | When it runs | Use case |
-|------|--------------|----------|
-| **`api`** | HTTP request | REST APIs, webhooks |
-| **`event`** | Event emitted | Background jobs, workflows |
-| **`cron`** | Schedule | Cleanup, reports, reminders |
-
-## Development Commands
-
-```bash
-# Start Workbench and development server
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-
-# Start production server (without hot reload)
-npm run start
-# or
-yarn start
-# or
-pnpm start
-
-# Generate TypeScript types from Step configs
-npm run generate-types
-# or
-yarn generate-types
-# or
-pnpm generate-types
-
-# Build project for deployment
-npm run build
-# or
-yarn build
-# or
-pnpm build
-```
-
-## Project Structure
-
-```
-steps/              # Your Step definitions (or use src/)
-src/                # Shared services and utilities
-motia.config.ts     # Motia configuration
-```
-
-Steps are auto-discovered from your `steps/` or `src/` directories - no manual registration required.
-
-## Tutorial
-
-This project includes an interactive tutorial that will guide you through:
-- Understanding Steps and their types
-- Creating API endpoints
-- Building event-driven workflows
-- Using state management
-- Observing your flows in the Workbench
-
-## Learn More
-
-- [Documentation](https://motia.dev/docs) - Complete guides and API reference
-- [Quick Start Guide](https://motia.dev/docs/getting-started/quick-start) - Detailed getting started tutorial
-- [Core Concepts](https://motia.dev/docs/concepts/overview) - Learn about Steps and Motia architecture
-- [Discord Community](https://discord.gg/motia) - Get help and connect with other developers
+git clone [https://github.com/yourusername/TNServe.git](https://github.com/yourusername/TNServe.git)
+cd TNServe
+npm install
